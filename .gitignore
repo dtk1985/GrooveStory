@@ -1,0 +1,47 @@
+# Docker
+.docker/
+docker-compose.override.yml
+.dockerignore
+
+# PHP
+/vendor/
+/node_modules/
+*.phpunit.cache
+.phpunit.result.cache
+composer.phar
+package-lock.json
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+obsidian/
+AGENTS.md
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+/public/hot
+/public/storage
+/storage/*.key
+
+# Cache
+/cache/
+/bootstrap/cache/*.php
+
+# Testing
+.phpunit/
+coverage/
