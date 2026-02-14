@@ -41,9 +41,27 @@ docker-compose up -d --build
 docker-compose down
 ```
 
-## Project Status
+### Database Schema
 
-Work in progress.
+The application uses a MariaDB database with the following structure:
+
+```sql
+-- Songs synced from Jellyfin
+songs: id, jellyfin_id, artist, title, release_year, album, created_at
+
+-- Game sessions
+games: id, session_id, score, status, created_at, updated_at
+
+-- Cards placed on timeline
+game_cards: id, game_id, song_id, position, placed_at
+```
+
+### Security Features
+
+- **Prepared Statements:** All database queries use PDO prepared statements to prevent SQL injection
+- **Environment Variables:** Credentials stored in `.env` file (gitignored)
+- **Read-only Jellyfin Account:** Dedicated service account with minimal permissions
+- **Input Validation:** All user inputs are validated before database operations
 
 ## How It Works
 
